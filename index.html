@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salary Calculator</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="jquery.js"></script>
     <script src="scripts.js"></script>
   </head>
   <body>
@@ -13,22 +14,23 @@
 
     <form>
       <p>Please Fill Out The Required Information:</p>
-
+      <!-- start of input table -->
+      <!-- name -->
       <div id="line-1">
         <input type="text" placeholder="First Name" id="First-Name-Input" />
         <input type="text" placeholder="Last Name" id="Last-Name-Input" />
       </div>
-
+      <!-- id and job title -->
       <div id="line-2">
         <input type="number" placeholder="Employee ID" id="ID-Input" />
         <input type="text" placeholder="Job Title" />
       </div>
-
+      <!-- salary and submit -->
       <div id="line-3"></div>
       <input type="number" placeholder="Annual Salary" />
       <input type="submit" id="submit-button-input" />
     </form>
-
+    <!-- table to display info -->
     <table>
       <thead>
         <tr>
