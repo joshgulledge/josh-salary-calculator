@@ -23,11 +23,15 @@
       <!-- id and job title -->
       <div id="line-2">
         <input type="number" placeholder="Employee ID" id="ID-Input" />
-        <input type="text" placeholder="Job Title" />
+        <input type="text" placeholder="Job Title" id="job-title-input" />
       </div>
       <!-- salary and submit -->
       <div id="line-3"></div>
-      <input type="number" placeholder="Annual Salary" />
+      <input
+        type="number"
+        placeholder="Annual Salary"
+        id="annual-salary-input"
+      />
       <input type="submit" id="submit-button-input" />
     </form>
     <!-- table to display info -->
@@ -41,15 +45,15 @@
           <th>Annual Salary</th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="employee-info">
-          <!-- should look like this -->
-          <!-- <td>Josh</td>
+      <tbody class="employee-info">
+        <!-- <tr> -->
+        <!-- should look like this -->
+        <!-- <td>Josh</td>
           <td>Gulledge</td>
           <td>112233</td>
           <td>Software Engineer</td>
           <td>$87000</td> -->
-        </tr>
+        <!-- </tr> -->
       </tbody>
       <tfoot>
         <tr>
@@ -58,5 +62,7 @@
         </tr>
       </tfoot>
     </table>
+
+    <div class="costs">Monthly Cost <span id="monthly-cost-output"></span></div>
   </body>
 </html>
