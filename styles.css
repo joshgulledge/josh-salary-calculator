@@ -1,3 +1,7 @@
 body {
   background-color: aquamarine;
 }
+
+.employee-info * {
+  padding: 25px;
+}
