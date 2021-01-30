@@ -8,12 +8,27 @@ function andGo() {
   $(document).on('click', '.delete-btn', deleteEmployee);
 }
 
-function deleteEmployee(e) {
-  console.log(e);
-  console.log(this);
-  console.log($(this).parent('.this-employee'));
+function deleteEmployee() {
   console.log(this.id);
-  console.log('delete button');
+  const { firstName, employeeID, ...rest } = searchEmployeeList(this.id);
+
+  console.log(firstName, employeeID);
+
+  const indexWeWant = employeeList.findIndex(
+    (obj) => obj.firstName === firstName
+  );
+
+  employeeList.splice(indexWeWant, 1);
+
+  // empty existing employee table
+  $('.employee-info').empty();
+
+  // render table with new list
+  employeeList.forEach((emplObj) => {
+    renderData(emplObj);
+  });
+
+  console.log(indexWeWant);
 }
 
 // function deleteEmployee() {
@@ -43,10 +58,9 @@ function deleteEmployee(e) {
 //   });
 // } // end deleteEmployee
 
-function searchEmployeeList(emply) {
-  // console.log(emply, empID);
+function searchEmployeeList(emplyID) {
   const [iFoundYou] = employeeList.filter((emp) => {
-    return emp.firstName === emply;
+    return emp.employeeID === emplyID;
   });
   return iFoundYou;
 } // end searchEmployeeList
