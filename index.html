@@ -9,75 +9,78 @@
     <script src="scripts.js"></script>
   </head>
   <body>
-    <h1>Welcome One and All</h1>
-    <h3>To the last salary calculator you'll ever use</h3>
+    <div class="whole-page">
+      <h1>Welcome One and All</h1>
+      <h3>To the last salary calculator you'll ever use</h3>
 
-    <form>
-      <p>Please Fill Out The Required Information:</p>
-      <!-- start of input table -->
-      <!-- name -->
-      <div id="line-1">
-        <input type="text" placeholder="First Name" id="First-Name-Input" />
-        <input type="text" placeholder="Last Name" id="Last-Name-Input" />
+      <form class="form-info">
+        <p>Please Fill Out The Required Information:</p>
+        <!-- start of input table -->
+        <!-- name -->
+        <div id="line-1">
+          <input type="text" placeholder="First Name" id="First-Name-Input" />
+          <input type="text" placeholder="Last Name" id="Last-Name-Input" />
+        </div>
+        <!-- id and job title -->
+        <div id="line-2">
+          <input type="number" placeholder="Employee ID" id="ID-Input" />
+          <input type="text" placeholder="Job Title" id="job-title-input" />
+        </div>
+        <!-- salary and submit -->
+        <div id="line-3"></div>
+        <input
+          type="number"
+          placeholder="Annual Salary"
+          id="annual-salary-input"
+        />
+        <input type="submit" id="submit-button-input" />
+      </form>
+      <!-- Monthyly Cost -->
+      <div class="costs">
+        Monthly Cost <span id="monthly-cost-output"> </span>
       </div>
-      <!-- id and job title -->
-      <div id="line-2">
-        <input type="number" placeholder="Employee ID" id="ID-Input" />
-        <input type="text" placeholder="Job Title" id="job-title-input" />
-      </div>
-      <!-- salary and submit -->
-      <div id="line-3"></div>
-      <input
-        type="number"
-        placeholder="Annual Salary"
-        id="annual-salary-input"
-      />
-      <input type="submit" id="submit-button-input" />
-    </form>
-    <!-- Monthyly Cost -->
-    <div class="costs">
-      Monthly Cost <span id="monthly-cost-output"> </span>
-    </div>
-    <!-- table to display info -->
-    <table>
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>ID Number</th>
-          <th>Job Title</th>
-          <th>Annual Salary</th>
-        </tr>
-      </thead>
-      <tbody class="employee-info">
-        <!-- <tr> -->
-        <!-- should look like this -->
-        <!-- <td>Josh</td>
+      <!-- table to display info -->
+      <table class="table-info">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID Number</th>
+            <th>Job Title</th>
+            <th>Annual Salary</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="employee-info">
+          <!-- <tr> -->
+          <!-- should look like this -->
+          <!-- <td>Josh</td>
           <td>Gulledge</td>
           <td>112233</td>
           <td>Software Engineer</td>
           <td>$87000</td> -->
-        <!-- </tr> -->
-      </tbody>
-      <tfoot>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-      </tfoot>
-    </table>
-    <div class="delete-employee">
-      <input
-        type="text"
-        placeholder="First name of employee"
-        id="employee-delete-input"
-      />
-      <input
-        type="number"
-        placeholder="Employee ID"
-        id="employeeID-delete-input"
-      />
-      <button id="delete-btn">Delete Employee</button>
+          <!-- </tr> -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <!-- <div class="delete-employee">
+        <input
+          type="text"
+          placeholder="First name of employee"
+          id="employee-delete-input"
+        />
+        <input
+          type="number"
+          placeholder="Employee ID"
+          id="employeeID-delete-input"
+        />
+        <button id="delete-btn">Delete Employee</button>
+      </div> -->
     </div>
   </body>
 </html>

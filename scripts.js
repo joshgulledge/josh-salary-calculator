@@ -5,34 +5,43 @@ let monthlyCost = 0;
 
 function andGo() {
   $('#submit-button-input').on('click', submitForm);
-  $('#delete-btn').on('click', deleteEmployee);
+  $(document).on('click', '.delete-btn', deleteEmployee);
 }
 
-function deleteEmployee() {
-  // get the inputs
-  const empDltInput = $('#employee-delete-input');
-  const empIDDltInput = $('#employeeID-delete-input');
+function deleteEmployee(e) {
+  console.log(e);
+  console.log(this);
+  console.log($(this).parent('.this-employee'));
+  console.log(this.id);
+  console.log('delete button');
+}
 
-  // find the right object with given inputs
-  const { firstName, employeeID, ...rest } = searchEmployeeList(
-    empDltInput.val()
-  );
+// function deleteEmployee() {
+//   // get the inputs
+//   const empDltInput = $('#employee-delete-input');
+//   const empIDDltInput = $('#employeeID-delete-input');
 
-  // find the right object in the array
-  const indexWeWant = employeeList.findIndex(
-    (obj) => obj.firstName === firstName
-  );
+//   // find the right object with given inputs
+//   const { firstName, employeeID, ...rest } = searchEmployeeList(
+//     empDltInput.val()
+//   );
 
-  // remove that obj from the array
-  employeeList.splice(indexWeWant, 1);
+//   console.log(firstName);
+//   // find the right object in the array
+//   const indexWeWant = employeeList.findIndex(
+//     (obj) => obj.firstName === firstName && obj.employeeID === employeeID
+//   );
 
-  // empty existing employee table
-  $('.employee-info').empty();
-  // render table with new list
-  employeeList.forEach((emplObj) => {
-    renderData(emplObj);
-  });
-} // end deleteEmployee
+//   // remove that obj from the array
+//   employeeList.splice(indexWeWant, 1);
+
+//   // empty existing employee table
+//   $('.employee-info').empty();
+//   // render table with new list
+//   employeeList.forEach((emplObj) => {
+//     renderData(emplObj);
+//   });
+// } // end deleteEmployee
 
 function searchEmployeeList(emply) {
   // console.log(emply, empID);
@@ -72,7 +81,8 @@ function submitForm(e) {
 
 function calMonthCost(annualSalary) {
   // get monthly cost hence 12
-  monthlyCost += annualSalary / 12;
+  monthlyCost += Number((annualSalary / 12).toFixed(2));
+  console.log(monthlyCost);
 
   // check if over 20000 a month
   if (monthlyCost > 20000) {
@@ -82,12 +92,14 @@ function calMonthCost(annualSalary) {
 
 function renderData(employeeObj) {
   $('.employee-info').append(`
-    <tr>
+    <tr class="this-employee">
     <td>${employeeObj.firstName}</td>
     <td>${employeeObj.lastName}</td>
     <td>${employeeObj.employeeID}</td>
     <td>${employeeObj.jobTitle}</td>
     <td>${employeeObj.annualSalary}</td>
+    <td><button id="${employeeObj.employeeID}"  class="delete-btn" >Delete Employee</button></td>
+
     </tr>
   `);
 

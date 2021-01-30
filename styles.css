@@ -2,6 +2,22 @@ body {
   background-color: aquamarine;
 }
 
+.whole-page {
+  text-align: center;
+  background-color: blueviolet;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+
+.form-info * {
+  padding: 10px;
+}
+
+.table-info {
+  margin: 0 auto;
+}
+
 .employee-info * {
-  padding: 25px;
+  padding: 5px;
 }
