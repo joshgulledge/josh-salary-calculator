@@ -29,11 +29,21 @@ function submitForm(e) {
   $('#job-title-input').val('');
   $('#annual-salary-input').val('');
 
+  // cal the monthly cost
+  calMonthCost(employee.annualSalary);
+
   // put data on table
   renderData(employee);
+}
 
+function calMonthCost(annualSalary) {
   // get monthly cost hence 12
-  monthlyCost = employee.annualSalary / 12;
+  monthlyCost = annualSalary / 12;
+
+  // check if over 20000 a month
+  if (monthlyCost > 20) {
+    $('#monthly-cost-output').css('backgound-color: red');
+  }
 }
 
 function renderData(employeeObj) {
@@ -47,5 +57,5 @@ function renderData(employeeObj) {
     </tr>
   `);
 
-  $('#monthly-cost-output').empty().append(`${monthlyCost}`);
+  $('#monthly-cost-output').empty().append(`$${monthlyCost}`);
 }
