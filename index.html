@@ -34,6 +34,10 @@
       />
       <input type="submit" id="submit-button-input" />
     </form>
+    <!-- Monthyly Cost -->
+    <div class="costs">
+      Monthly Cost <span id="monthly-cost-output"> </span>
+    </div>
     <!-- table to display info -->
     <table>
       <thead>
@@ -62,9 +66,18 @@
         </tr>
       </tfoot>
     </table>
-
-    <div class="costs">
-      Monthly Cost <span id="monthly-cost-output"> </span>
+    <div class="delete-employee">
+      <input
+        type="text"
+        placeholder="First name of employee"
+        id="employee-delete-input"
+      />
+      <input
+        type="number"
+        placeholder="Employee ID"
+        id="employeeID-delete-input"
+      />
+      <button id="delete-btn">Delete Employee</button>
     </div>
   </body>
 </html>
