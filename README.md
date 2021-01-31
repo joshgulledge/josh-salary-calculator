@@ -9,4 +9,8 @@ This project takes in an organizations employee list, and with that it tracks th
 - Delete employee information
 - Get a monthly cost of all employees
 
+### ScreenShot of Page
+
+![MyPage](MyPage.png)
+
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
