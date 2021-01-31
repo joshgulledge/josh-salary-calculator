@@ -1,7 +1,6 @@
 $(document).ready(andGo);
 
 let employeeList = [];
-let annualSalaryList = [];
 let monthlyCost = 0;
 
 function andGo() {
@@ -29,7 +28,8 @@ function deleteEmployee() {
     renderData(emplObj);
   });
 
-  console.log(indexWeWant);
+  calMonthCost(employeeList);
+  $('#monthly-cost-output').empty().append(`$${monthlyCost}`);
 }
 
 // function deleteEmployee() {
@@ -88,16 +88,21 @@ function submitForm(e) {
   $('#annual-salary-input').val('');
 
   // cal the monthly cost
-  annualSalaryList.push(Number(employee.annualSalary));
-  calMonthCost(annualSalaryList);
+  calMonthCost(employeeList);
 
   // put data on table
   renderData(employee);
 } // end submitForm
 
-function calMonthCost(salaryList) {
+function calMonthCost(allEmployees) {
+  let annualSalaryList = [];
+
+  allEmployees.map((obj) => {
+    annualSalaryList.push(Number(obj.annualSalary));
+  });
+
   // get monthly cost hence 12
-  const annualTotal = salaryList.reduce((acc, salary) => acc + salary);
+  const annualTotal = annualSalaryList.reduce((acc, salary) => acc + salary);
 
   monthlyCost = Number((annualTotal / 12).toFixed(2));
 
