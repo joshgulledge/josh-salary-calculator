@@ -14,7 +14,7 @@
       <h3>To the last salary calculator you'll ever use</h3>
 
       <form class="form-info">
-        <p>Please Fill Out The Required Information:</p>
+        <p id="fill-out">Please Fill Out The Required Information:</p>
         <!-- start of input table -->
         <!-- name -->
         <div class="line-1">
@@ -22,18 +22,19 @@
           <input type="text" placeholder="Last Name" id="Last-Name-Input" />
         </div>
         <!-- id and job title -->
-        <div id="line-2">
+        <div class="line-2">
           <input type="number" placeholder="Employee ID" id="ID-Input" />
           <input type="text" placeholder="Job Title" id="job-title-input" />
         </div>
         <!-- salary and submit -->
-        <div id="line-3"></div>
-        <input
-          type="number"
-          placeholder="Annual Salary"
-          id="annual-salary-input"
-        />
-        <input type="submit" id="submit-button-input" />
+        <div class="line-3">
+          <input
+            type="number"
+            placeholder="Annual Salary"
+            id="annual-salary-input"
+          />
+          <input type="submit" id="submit-button-input" />
+        </div>
       </form>
       <!-- Monthyly Cost -->
       <div class="costs">
@@ -42,7 +43,7 @@
       <!-- table to display info -->
       <table class="table-info">
         <thead>
-          <tr>
+          <tr class="table-row">
             <th>First Name</th>
             <th>Last Name</th>
             <th>ID Number</th>

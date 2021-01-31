@@ -114,7 +114,7 @@ function calMonthCost(allEmployees) {
 
 function renderData(employeeObj) {
   $('.employee-info').append(`
-    <tr class="this-employee">
+    <tr class="this-employee table-row">
     <td>${employeeObj.firstName}</td>
     <td>${employeeObj.lastName}</td>
     <td>${employeeObj.employeeID}</td>

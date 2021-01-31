@@ -1,20 +1,53 @@
 body {
-  background-color: aquamarine;
+  background-image: url('https://jumbotech.net/wp-content/uploads/2016/03/7-Best-Pattern-of-Background-Images-for-Websites-1-Dark-Wood.jpg');
+  color: #eeeeee;
+}
+
+h1,
+h3 {
+  width: 90%;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #2f3032;
 }
 
 .whole-page {
   text-align: center;
-  background-color: blueviolet;
   width: 90%;
   margin: auto;
   padding: 10px;
 }
 
 .line-1 {
-  background-color: cadetblue;
   display: flex;
-  width: 75%;
+  width: 50%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.line-2 {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.line-3 {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+#fill-out {
   justify-content: center;
+  width: 75%;
+  background-color: #2f3032;
+}
+
+.table-row {
+  background-color: #2f3032;
 }
 
 .form-info * {
