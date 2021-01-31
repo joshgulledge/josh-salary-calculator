@@ -109,8 +109,14 @@ h3 {
 
 .costs {
   display: flex;
-  width: 35%;
+  justify-content: space-around;
+  width: 48%;
   margin: 20px auto;
+  color: #acdbdf;
+}
+
+#reset-button {
+  background-color: #606470;
   color: #acdbdf;
 }
 

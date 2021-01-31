@@ -7,12 +7,13 @@ let deletedEmployees = [];
 function andGo() {
   $('#submit-button-input').on('click', submitForm);
   // $(document).on('click', '.delete-btn', deleteEmployee);
+  $('#reset-button').on('click', resetButton);
   $(document).on('click', '.delete-btn', removeFromDom);
 }
 
 // the way i originally deleted the employee was find and remove it
 // from the array then re render it on the page. after reading the
-// comments i didnt know if that was right. Left both functioning
+// comments in slack i didnt know if that was right. Left both functioning
 // code functions here with only the remove from dom one active.
 
 function deleteEmployee() {
@@ -33,7 +34,9 @@ function deleteEmployee() {
   });
 
   calMonthCost(employeeList);
-  $('#monthly-cost-output').empty().append(`$${monthlyCost}`);
+  $('#monthly-cost-output')
+    .empty()
+    .append(`$${Number(monthlyCost.toFixed(2))}`);
 } // end deleteEmployee
 
 function removeFromDom() {
@@ -51,10 +54,26 @@ function removeFromDom() {
   if (monthlyCost < 1) monthlyCost = 0;
 
   // render monthly cost again
-  $('#monthly-cost-output').empty().append(`$${monthlyCost}`);
+  $('#monthly-cost-output')
+    .empty()
+    .append(`$${Number(monthlyCost.toFixed(2))}`);
+} // end removeFromDom
 
-  console.log(emplySal);
-}
+function resetButton() {
+  $('.employee-info').empty();
+
+  monthlyCost = 0;
+
+  employeeList.forEach((obj) => {
+    monthlyCost += Number((obj.annualSalary / 12).toFixed(2));
+
+    renderData(obj);
+  });
+  // render monthly cost again
+  $('#monthly-cost-output')
+    .empty()
+    .append(`$${Number(monthlyCost.toFixed(2))}`);
+} // end resetButton
 
 function searchEmployeeList(emplyID) {
   const [iFoundYou] = employeeList.filter((emp) => {
@@ -138,5 +157,7 @@ function renderData(employeeObj) {
     </tr>
   `);
 
-  $('#monthly-cost-output').empty().append(`$${monthlyCost}`);
+  $('#monthly-cost-output')
+    .empty()
+    .append(`$${Number(monthlyCost.toFixed(2))}`);
 } // end renderData
