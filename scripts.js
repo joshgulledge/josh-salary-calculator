@@ -9,10 +9,7 @@ function andGo() {
 }
 
 function deleteEmployee() {
-  console.log(this.id);
   const { firstName, employeeID, ...rest } = searchEmployeeList(this.id);
-
-  console.log(firstName, employeeID);
 
   const indexWeWant = employeeList.findIndex(
     (obj) => obj.firstName === firstName
@@ -32,33 +29,6 @@ function deleteEmployee() {
   $('#monthly-cost-output').empty().append(`$${monthlyCost}`);
 }
 
-// function deleteEmployee() {
-//   // get the inputs
-//   const empDltInput = $('#employee-delete-input');
-//   const empIDDltInput = $('#employeeID-delete-input');
-
-//   // find the right object with given inputs
-//   const { firstName, employeeID, ...rest } = searchEmployeeList(
-//     empDltInput.val()
-//   );
-
-//   console.log(firstName);
-//   // find the right object in the array
-//   const indexWeWant = employeeList.findIndex(
-//     (obj) => obj.firstName === firstName && obj.employeeID === employeeID
-//   );
-
-//   // remove that obj from the array
-//   employeeList.splice(indexWeWant, 1);
-
-//   // empty existing employee table
-//   $('.employee-info').empty();
-//   // render table with new list
-//   employeeList.forEach((emplObj) => {
-//     renderData(emplObj);
-//   });
-// } // end deleteEmployee
-
 function searchEmployeeList(emplyID) {
   const [iFoundYou] = employeeList.filter((emp) => {
     return emp.employeeID === emplyID;
@@ -70,6 +40,16 @@ function submitForm(e) {
   e.preventDefault();
   let employee = {};
 
+  if (
+    !$('#First-Name-Input').val() ||
+    !$('#Last-Name-Input').val() ||
+    !$('#ID-Input').val() ||
+    !$('#job-title-input').val() ||
+    !$('#annual-salary-input').val()
+  ) {
+    alert('Please fill out entire form');
+    return;
+  }
   // get info and save into obj
   employee.firstName = $('#First-Name-Input').val();
   employee.lastName = $('#Last-Name-Input').val();
@@ -102,13 +82,19 @@ function calMonthCost(allEmployees) {
   });
 
   // get monthly cost hence 12
-  const annualTotal = annualSalaryList.reduce((acc, salary) => acc + salary);
+  if (annualSalaryList.length !== 0) {
+    const annualTotal = annualSalaryList.reduce((acc, salary) => acc + salary);
 
-  monthlyCost = Number((annualTotal / 12).toFixed(2));
+    monthlyCost = Number((annualTotal / 12).toFixed(2));
+  } else {
+    monthlyCost = 0;
+  }
 
   // check if over 20000 a month
   if (monthlyCost > 20000) {
-    $('#monthly-cost-output').css('background-color', 'red');
+    $('#monthly-cost-output').addClass('over-budget');
+  } else {
+    $('#monthly-cost-output').removeClass('over-budget');
   }
 } // end calMonthCost
 

@@ -1,6 +1,6 @@
 body {
   background-image: url('https://jumbotech.net/wp-content/uploads/2016/03/7-Best-Pattern-of-Background-Images-for-Websites-1-Dark-Wood.jpg');
-  color: #eeeeee;
+  color: #0f3057;
 }
 
 h1,
@@ -9,7 +9,7 @@ h3 {
   border-radius: 20px;
   margin: 5px;
   padding: 10px;
-  background-color: #2f3032;
+  background-color: #d3e0ea;
 }
 
 .whole-page {
@@ -19,11 +19,35 @@ h3 {
   padding: 10px;
 }
 
+#fill-out {
+  justify-content: center;
+  width: 90%;
+  border-radius: 20px;
+  background-color: #d3e0ea;
+  color: #0f3057;
+}
+
+::placeholder {
+  color: #6c7b95;
+}
+
 .line-1 {
   display: flex;
   width: 50%;
   margin: auto;
   justify-content: space-around;
+}
+
+#First-Name-Input {
+  width: 25%;
+  background-color: #d3e0ea;
+  border-radius: 10px;
+}
+
+#Last-Name-Input {
+  width: 25%;
+  background-color: #d3e0ea;
+  border-radius: 10px;
 }
 
 .line-2 {
@@ -33,6 +57,18 @@ h3 {
   justify-content: space-around;
 }
 
+#ID-Input {
+  width: 25%;
+  background-color: #d3e0ea;
+  border-radius: 10px;
+}
+
+#job-title-input {
+  width: 25%;
+  background-color: #d3e0ea;
+  border-radius: 10px;
+}
+
 .line-3 {
   display: flex;
   width: 50%;
@@ -40,14 +76,20 @@ h3 {
   justify-content: space-around;
 }
 
-#fill-out {
-  justify-content: center;
-  width: 75%;
-  background-color: #2f3032;
+#annual-salary-input {
+  width: 25%;
+  background-color: #d3e0ea;
+  border-radius: 10px;
+}
+
+#submit-button-input {
+  width: 28%;
+  background-color: #ffc75f;
+  border-radius: 10px;
 }
 
 .table-row {
-  background-color: #2f3032;
+  background-color: #d3e0ea;
 }
 
 .form-info * {
@@ -58,6 +100,25 @@ h3 {
   margin: 0 auto;
 }
 
+.costs {
+  display: flex;
+  width: 35%;
+  margin: auto;
+  color: #d3e0ea;
+}
+
+#monthly-cost-output {
+  margin-left: 10px;
+}
+
 .employee-info * {
   padding: 5px;
+}
+
+.delete-btn {
+  background-color: #ff7844;
+}
+
+.over-budget {
+  background-color: red;
 }
