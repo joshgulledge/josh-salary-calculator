@@ -2,7 +2,7 @@
 
 ## Description
 
-This project was to take in an organizations employee list, and to with that track the monthly spending on employee salary with that information.
+This project takes in an organizations employee list, and with that it tracks the monthly spending on employee salary with that information.
 
 - Add your employee and salary information
 - Have employees listed

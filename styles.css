@@ -1,6 +1,17 @@
 body {
   background-image: url('https://jumbotech.net/wp-content/uploads/2016/03/7-Best-Pattern-of-Background-Images-for-Websites-1-Dark-Wood.jpg');
-  color: #0f3057;
+  color: #acdbdf;
+}
+
+input,
+select,
+textarea {
+  color: #acdbdf;
+}
+
+textarea:focus,
+input:focus {
+  color: #acdbdf;
 }
 
 h1,
@@ -9,7 +20,7 @@ h3 {
   border-radius: 20px;
   margin: 5px;
   padding: 10px;
-  background-color: #d3e0ea;
+  background-color: #0f0a3c;
 }
 
 .whole-page {
@@ -23,12 +34,12 @@ h3 {
   justify-content: center;
   width: 90%;
   border-radius: 20px;
-  background-color: #d3e0ea;
-  color: #0f3057;
+  background-color: #0f0a3c;
+  color: #acdbdf;
 }
 
 ::placeholder {
-  color: #6c7b95;
+  color: #acdbdf;
 }
 
 .line-1 {
@@ -40,13 +51,13 @@ h3 {
 
 #First-Name-Input {
   width: 25%;
-  background-color: #d3e0ea;
+  background-color: #0f0a3c;
   border-radius: 10px;
 }
 
 #Last-Name-Input {
   width: 25%;
-  background-color: #d3e0ea;
+  background-color: #0f0a3c;
   border-radius: 10px;
 }
 
@@ -59,13 +70,13 @@ h3 {
 
 #ID-Input {
   width: 25%;
-  background-color: #d3e0ea;
+  background-color: #0f0a3c;
   border-radius: 10px;
 }
 
 #job-title-input {
   width: 25%;
-  background-color: #d3e0ea;
+  background-color: #0f0a3c;
   border-radius: 10px;
 }
 
@@ -78,18 +89,14 @@ h3 {
 
 #annual-salary-input {
   width: 25%;
-  background-color: #d3e0ea;
+  background-color: #0f0a3c;
   border-radius: 10px;
 }
 
 #submit-button-input {
   width: 28%;
-  background-color: #ffc75f;
+  background-color: #606470;
   border-radius: 10px;
-}
-
-.table-row {
-  background-color: #d3e0ea;
 }
 
 .form-info * {
@@ -103,20 +110,39 @@ h3 {
 .costs {
   display: flex;
   width: 35%;
-  margin: auto;
-  color: #d3e0ea;
+  margin: 20px auto;
+  color: #acdbdf;
 }
 
 #monthly-cost-output {
   margin-left: 10px;
 }
 
+table {
+  width: 60%;
+}
+
+.table-row {
+  color: #acdbdf;
+}
+
+table,
+th,
+td {
+  background-color: #0f0a3c;
+  border: 1px solid #d3e0ea;
+  color: #acdbdf;
+}
+
+.table-row {
+  border-radius: 10px;
+}
 .employee-info * {
   padding: 5px;
 }
 
 .delete-btn {
-  background-color: #ff7844;
+  background-color: #606470;
 }
 
 .over-budget {
