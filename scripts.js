@@ -1,6 +1,7 @@
 $(document).ready(andGo);
 
 let employeeList = [];
+let annualSalaryList = [];
 let monthlyCost = 0;
 
 function andGo() {
@@ -87,16 +88,18 @@ function submitForm(e) {
   $('#annual-salary-input').val('');
 
   // cal the monthly cost
-  calMonthCost(employee.annualSalary);
+  annualSalaryList.push(Number(employee.annualSalary));
+  calMonthCost(annualSalaryList);
 
   // put data on table
   renderData(employee);
 } // end submitForm
 
-function calMonthCost(annualSalary) {
+function calMonthCost(salaryList) {
   // get monthly cost hence 12
-  monthlyCost += Number((annualSalary / 12).toFixed(2));
-  console.log(monthlyCost);
+  const annualTotal = salaryList.reduce((acc, salary) => acc + salary);
+
+  monthlyCost = Number((annualTotal / 12).toFixed(2));
 
   // check if over 20000 a month
   if (monthlyCost > 20000) {
