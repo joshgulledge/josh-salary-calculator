@@ -8,6 +8,8 @@ This project takes in an organizations employee list, and with that it tracks th
 - Have employees listed
 - Delete employee information
 - Get a monthly cost of all employees
+- makes sure there is no reuse of employee ID
+- remove employees to see how it effects the monthly cost without deleting them
 
 ### ScreenShot of Page
 
