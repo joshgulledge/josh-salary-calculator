@@ -84,8 +84,10 @@ function searchEmployeeList(emplyID) {
 
 function submitForm(e) {
   e.preventDefault();
+  // init the employee obj
   let employee = {};
 
+  // require from to be completed
   if (
     !$('#First-Name-Input').val() ||
     !$('#Last-Name-Input').val() ||
@@ -96,12 +98,28 @@ function submitForm(e) {
     alert('Please fill out entire form');
     return;
   }
+
   // get info and save into obj
   employee.firstName = $('#First-Name-Input').val();
   employee.lastName = $('#Last-Name-Input').val();
   employee.employeeID = $('#ID-Input').val();
   employee.jobTitle = $('#job-title-input').val();
   employee.annualSalary = $('#annual-salary-input').val();
+
+  // check if employID is already in use
+  let idInUse = false;
+
+  employeeList.map((obj) => {
+    if (idInUse) return;
+    idInUse = Object.values(obj).includes(employee.employeeID);
+  });
+
+  // if id is in use stop function
+  if (idInUse) {
+    $('#ID-Input').val('');
+    alert('This Employee ID is already in use.');
+    return;
+  }
 
   // push obj to array
   employeeList.push(employee);
